@@ -1,18 +1,24 @@
 {
   "name": "rtodolist",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "author": "exaesel",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
+    "copy-webpack-plugin": "^5.0.3",
+    "http-server": "^0.11.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "ts-loader": "^6.0.2",
     "typescript": "^3.5.2",
     "webpack": "^4.34.0",
     "webpack-cli": "^3.3.4"
+  },
+  "scripts": {
+    "build": "webpack --mode development",
+    "start": "http-server -p 2000 dist"
   }
 }
