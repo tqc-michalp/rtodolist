@@ -2,8 +2,9 @@ body {
   font-family: 'Inconsolata';
 }
 
-li.to-do-list {
-  .done {
+li.task {
+  background-color: orange;
+  &.done {
     background-color: forestgreen;
   }
 }

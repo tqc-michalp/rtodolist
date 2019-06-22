@@ -7,6 +7,9 @@ const copyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/app.tsx',
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js']
+    },
     module: {
         rules: [
             {
@@ -15,6 +18,15 @@ module.exports = {
                     path.resolve(__dirname, 'src')
                 ],
                 loader: 'ts-loader'
+            },
+            {
+                test: /\.scss?$/,
+                include: [
+                    path.resolve(__dirname, 'src')
+                ],
+                use: [
+                 'style-loader', require.resolve('css-loader'), require.resolve('sass-loader')
+                ]
             }
         ]
     },
@@ -24,8 +36,7 @@ module.exports = {
     },
     plugins: [
         new copyWebpackPlugin([
-            { from: 'src/index.html', to: 'index.html' },
-            { from: 'src/css/app.css', to: 'app.css' }
+            { from: 'src/index.html', to: 'index.html' }
         ])
     ]
 };
