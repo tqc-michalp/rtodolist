@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { format } from 'date-fns';
 
-export const TaskItem = ({data, toggleTask}: TaskItemProps) => {
+export const TaskItem = ({task, toggleTask}: TaskItemProps) => {
 
     return (
-        <li className={data.done ? 'task done' : 'task' }>
+        <li className={task.done ? 'task done' : 'task' }>
             <input
                 type='checkbox'
-                checked={data.done}
-                onClick={toggleTask}
+                checked={task.done}
+                onClick={ () => toggleTask(task) }
             />
-            {data.name} {format(data.date, 'YYYY-MM-DD')}
+            {task.name} {format(task.date, 'YYYY-MM-DD')}
         </li>
     )
 };
@@ -23,6 +23,6 @@ export interface Task {
 }
 
 export interface TaskItemProps {
-    data: Task;
+    task: Task;
     toggleTask: (task:Task) => void;
 }

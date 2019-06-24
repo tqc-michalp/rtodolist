@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import { TaskItem, Task } from './task';
-import './css/app.scss';
+import { TaskItem, Task } from './task/task';
+import './app.scss';
 
 class Base extends React.Component<{}> {
     public state: State = {
@@ -27,20 +27,31 @@ class Base extends React.Component<{}> {
                 }
             ]
     }
+
     render() {
-        return(
+        return (
             <>
                 <h2>ToDoList on React</h2>
                 <p>Hello World!</p>
                 <ul>
-                    {this.state.tasks.map( e =>  <TaskItem data={e} key={e.id} /> )}
+                    {this.state.tasks.map(e => <TaskItem key={e.id} task={e} toggleTask={ () => { this.toggleTask(e) } } />)}
                 </ul>
             </>
         );
     }
 
-    toggleTask(task) {
-
+    toggleTask(task: Task) {
+        this.setState({
+            tasks: this.state.tasks.map((t) => {
+                if (t == task) {
+                    return {
+                        ...task,
+                        done: !task.done
+                    }
+                }
+                return t;
+            })
+        });
     }
 }
 
@@ -56,4 +67,3 @@ interface State {
 // }
 
 ReactDom.render(<Base />, document.getElementById('entry-point'));
-// ReactDom.render('#entry-point', <Base />);
