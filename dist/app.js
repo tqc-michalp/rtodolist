@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/app.tsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/app/app.tsx");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/css/app.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/app/app.scss":
 /*!*********************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/css/app.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/app/app.scss ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body {\\n  font-family: 'Inconsolata'; }\\n\\nli.task {\\n  background-color: orange; }\\n  li.task.done {\\n    background-color: forestgreen; }\\n\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/css/app.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body {\\n  font-family: 'Inconsolata'; }\\n\\nli.task {\\n  background-color: orange; }\\n  li.task.done {\\n    background-color: forestgreen; }\\n\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/app/app.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 
@@ -2034,38 +2034,38 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
-/***/ "./src/app.tsx":
-/*!*********************!*\
-  !*** ./src/app.tsx ***!
-  \*********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst ReactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\nconst task_1 = __webpack_require__(/*! ./task */ \"./src/task.tsx\");\n__webpack_require__(/*! ./css/app.scss */ \"./src/css/app.scss\");\nclass Base extends React.Component {\n    constructor() {\n        super(...arguments);\n        this.state = {\n            tasks: [\n                {\n                    id: 1,\n                    name: 'Eng',\n                    date: Date.now(),\n                    done: true\n                },\n                {\n                    id: 2,\n                    name: 'gym',\n                    date: Date.now(),\n                    done: false\n                },\n                {\n                    id: 3,\n                    name: 'walk',\n                    date: Date.now(),\n                    done: false\n                }\n            ]\n        };\n    }\n    render() {\n        return (React.createElement(React.Fragment, null,\n            React.createElement(\"h2\", null, \"ToDoList on React\"),\n            React.createElement(\"p\", null, \"Hello World!\"),\n            React.createElement(\"ul\", null, this.state.tasks.map(e => React.createElement(task_1.TaskItem, { data: e, key: e.id })))));\n    }\n    toggleTask(task) {\n    }\n}\n// const Text = (e) => {\n//     return(\n//         <h3>{e.name}</h3>\n//     )\n// }\nReactDom.render(React.createElement(Base, null), document.getElementById('entry-point'));\n// ReactDom.render('#entry-point', <Base />);\n\n\n//# sourceURL=webpack:///./src/app.tsx?");
-
-/***/ }),
-
-/***/ "./src/css/app.scss":
+/***/ "./src/app/app.scss":
 /*!**************************!*\
-  !*** ./src/css/app.scss ***!
+  !*** ./src/app/app.scss ***!
   \**************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/lib/loader.js!./app.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/css/app.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/css/app.scss?");
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/lib/loader.js!./app.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/app/app.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/app/app.scss?");
 
 /***/ }),
 
-/***/ "./src/task.tsx":
-/*!**********************!*\
-  !*** ./src/task.tsx ***!
-  \**********************/
+/***/ "./src/app/app.tsx":
+/*!*************************!*\
+  !*** ./src/app/app.tsx ***!
+  \*************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst date_fns_1 = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/index.js\");\nexports.TaskItem = ({ data, toggleTask }) => {\n    return (React.createElement(\"li\", { className: data.done ? 'task done' : 'task' },\n        React.createElement(\"input\", { type: 'checkbox', checked: data.done, onClick: toggleTask }),\n        data.name,\n        \" \",\n        date_fns_1.format(data.date, 'YYYY-MM-DD')));\n};\n\n\n//# sourceURL=webpack:///./src/task.tsx?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst ReactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\nconst task_1 = __webpack_require__(/*! ./task/task */ \"./src/app/task/task.tsx\");\n__webpack_require__(/*! ./app.scss */ \"./src/app/app.scss\");\nclass Base extends React.Component {\n    constructor() {\n        super(...arguments);\n        this.state = {\n            tasks: [\n                {\n                    id: 1,\n                    name: 'Eng',\n                    date: Date.now(),\n                    done: true\n                },\n                {\n                    id: 2,\n                    name: 'gym',\n                    date: Date.now(),\n                    done: false\n                },\n                {\n                    id: 3,\n                    name: 'walk',\n                    date: Date.now(),\n                    done: false\n                }\n            ]\n        };\n    }\n    render() {\n        return (React.createElement(React.Fragment, null,\n            React.createElement(\"h2\", null, \"ToDoList on React\"),\n            React.createElement(\"p\", null, \"Hello World!\"),\n            React.createElement(\"ul\", null, this.state.tasks.map(e => React.createElement(task_1.TaskItem, { key: e.id, task: e, toggleTask: () => { this.toggleTask(e); } })))));\n    }\n    toggleTask(task) {\n        this.setState({\n            tasks: this.state.tasks.map((t) => {\n                if (t == task) {\n                    return {\n                        ...task,\n                        done: !task.done\n                    };\n                }\n                return t;\n            })\n        });\n    }\n}\n// const Text = (e) => {\n//     return(\n//         <h3>{e.name}</h3>\n//     )\n// }\nReactDom.render(React.createElement(Base, null), document.getElementById('entry-point'));\n// ReactDom.render('#entry-point', <Base />);\n\n\n//# sourceURL=webpack:///./src/app/app.tsx?");
+
+/***/ }),
+
+/***/ "./src/app/task/task.tsx":
+/*!*******************************!*\
+  !*** ./src/app/task/task.tsx ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst date_fns_1 = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/index.js\");\nexports.TaskItem = ({ task, toggleTask }) => {\n    return (React.createElement(\"li\", { className: task.done ? 'task done' : 'task' },\n        React.createElement(\"input\", { type: 'checkbox', checked: task.done, onClick: () => toggleTask(task) }),\n        task.name,\n        \" \",\n        date_fns_1.format(task.date, 'YYYY-MM-DD')));\n};\n\n\n//# sourceURL=webpack:///./src/app/task/task.tsx?");
 
 /***/ })
 
