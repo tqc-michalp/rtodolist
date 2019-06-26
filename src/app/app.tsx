@@ -1,9 +1,10 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { TaskItem, Task } from './task/task';
+import {NewTask} from "./task/new-task";
 import './app.scss';
 
-class Base extends React.Component<{}> {
+class App extends React.Component<{}, State> {
     public state: State = {
         tasks:
             [
@@ -33,6 +34,9 @@ class Base extends React.Component<{}> {
             <>
                 <h2>ToDoList on React</h2>
                 <p>Hello World!</p>
+                <p>
+                    <NewTask addTask={ (name: string) => { this.addTask(name) } } />
+                </p>
                 <ul>
                     {this.state.tasks.map(e => <TaskItem key={e.id} task={e} toggleTask={ () => { this.toggleTask(e) } } />)}
                 </ul>
@@ -53,6 +57,20 @@ class Base extends React.Component<{}> {
             })
         });
     }
+
+    addTask(task: string) {
+        const tasks = this.state.tasks;
+        this.setState({
+            tasks: tasks.concat(
+                {
+                    id: tasks[tasks.length - 1].id + 1,
+                    name: task,
+                    date: Date.now(),
+                    done: false
+                }
+            )
+        });
+    }
 }
 
 interface State {
@@ -66,4 +84,4 @@ interface State {
 //     )
 // }
 
-ReactDom.render(<Base />, document.getElementById('entry-point'));
+ReactDom.render(<App />, document.getElementById('entry-point'));
