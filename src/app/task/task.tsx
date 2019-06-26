@@ -8,7 +8,7 @@ export const TaskItem = ({task, toggleTask}: TaskItemProps) => {
             <input
                 type='checkbox'
                 checked={task.done}
-                onClick={ () => toggleTask(task) }
+                onClick={ () => toggleTask() }
             />
             {task.name} {format(task.date, 'YYYY-MM-DD')}
         </li>
@@ -24,5 +24,5 @@ export interface Task {
 
 export interface TaskItemProps {
     task: Task;
-    toggleTask: (task:Task) => void;
+    toggleTask: () => void;
 }
