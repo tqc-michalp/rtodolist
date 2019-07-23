@@ -5,29 +5,7 @@ import {NewTask} from "./task/new-task";
 import './app.scss';
 
 class App extends React.Component<{}, State> {
-    public state: State = {
-        tasks:
-            [
-                {
-                    id: 1,
-                    name: 'Eng',
-                    date: Date.now(),
-                    done: true
-                },
-                {
-                    id: 2,
-                    name: 'gym',
-                    date: Date.now(),
-                    done: false
-                },
-                {
-                    id: 3,
-                    name: 'walk',
-                    date: Date.now(),
-                    done: false
-                }
-            ]
-    }
+    public state = getInitialState();
 
     render() {
         return (
@@ -71,17 +49,48 @@ class App extends React.Component<{}, State> {
             )
         });
     }
+
+    componentDidUpdate() {
+        saveState(this.state);
+    }
+}
+
+const localStorageKey = 'bndkwyshwhndvuuuhrqqv';
+
+function getInitialState() {
+    const data = localStorage.getItem(localStorageKey);
+    if (data){
+        return JSON.parse(data);
+    }else {
+        return { tasks: [
+            {
+                id: 1,
+                name: 'eng',
+                date: Date.now(),
+                done: true
+            },
+            {
+                id: 2,
+                name: 'gym',
+                date: Date.now(),
+                done: false
+            },
+            {
+                id: 3,
+                name: "¯\\_(ツ)_/¯",
+                date: Date.now(),
+                done: false
+            }
+        ]}
+    }
+}
+
+function saveState(state: State) {
+    localStorage.setItem(localStorageKey, JSON.stringify(state));
 }
 
 interface State {
     tasks: Array<Task>
 }
-
-
-// const Text = (e) => {
-//     return(
-//         <h3>{e.name}</h3>
-//     )
-// }
 
 ReactDom.render(<App />, document.getElementById('entry-point'));
